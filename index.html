@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Encrypt</title>
 </head>
 <body>
-    
+    <header class="mx-5 my-5">
+        <h1><a href="https://github.com/darociion/" target="_blank"><i class="bi bi-github"></i></a></h1>
+    </header>
+    <main class="container mx-auto">
+        <form onsubmit="return false">
+        <div class="row">
+            <div class="col-6">
+                <textarea id="input-text" class="form-control" rows="12" placeholder="Enter text here"></textarea>
+                <div class="btns text-center my-3">
+                    <button onclick="encrypt()" id="encrypt-btn" class="btn btn-primary">encrypt</button>
+                    <button onclick="decrypt()" id="decrypt-btn" class="btn btn-secondary">decrypt</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <textarea id="output-text" class="form-control" rows="12" readonly></textarea>
+                <div class="btns text-center my-3">
+                    <button onclick="copyText()" id="copy-btn" class="btn btn-secondary">copy</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </main>
+    <footer class="text-center my-5">
+        <p><button id="github-btn" class="btn btn-primary btn-sm"><a href="https://github.com/darociion/" target="_blank"><i class="bi bi-github"></i> darociion</a></button> &copy; 2024</p>
+    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
