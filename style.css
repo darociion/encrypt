@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    background-color: #212529;
+    background-color: #f3f5fc;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
 }
 
 a {
@@ -18,22 +17,19 @@ a {
 #input-text {
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: #0a3871;
     box-shadow: inset 0 0 0 0 rgba(0,0,0,0);
-}
-
-#input-text::placeholder {
-    color: rgba(255, 255, 255, 0.5);
 }
 
 #output-text {
     background-image: url(img/design.svg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-color: #fefefe;
+    background-color: #fff;
     background-size: 50%;
     border: none;
     box-shadow: inset 0 0 0 0 rgba(0,0,0,0);
+    transition: 0.3s;
 }
 
 .btns {
@@ -47,11 +43,36 @@ a {
     font-size: 1.2rem;
     width: 10rem;
     height: 3rem;
-    border-radius: 0.5rem;
-    transition: 0.3s;
+    border-radius: 1rem;
+}
+
+#encrypt-btn, #github-btn {
+    background-color: #0a3871;
+    border: none;
+}
+
+#decrypt-btn {
+    background-color: #d8dfe8;
+    color: #0a3871;
 }
 
 #copy-btn {
+    background-color: #fff;
+    color: #0a3871;
     transition: 0.3s;
     visibility: hidden;
+}
+
+#copy-icon {
+    visibility: hidden;
+}
+
+/* tablet styles */
+@media screen and (max-width: 768px) {
+    
+}
+
+/* cellphone styles */
+@media screen and (max-width: 375px) {
+
 }

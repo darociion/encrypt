@@ -1,41 +1,49 @@
+// codifica lo que hay en el textarea de entrada o lo copiado en el textarea de salida
 function encrypt() {
-    const inputText = document.getElementById("input-text").value;
+    let inputText = document.getElementById("input-text").value;
+
     if (inputText === "") {
         alert("Please enter some text");
         return;
     }
+
+    inputText = inputText.toLowerCase();
     const outputText = document.getElementById("output-text");
     const inputTextArray = inputText.split("");
-    const outputTextArray = [];
 
     for (let i = 0; i < inputTextArray.length; i++) {
         if (inputTextArray[i] === "a") {
-            outputTextArray[i] = "ai";
+            inputTextArray[i] = "ai";
         } else if (inputTextArray[i] === "e") {
-            outputTextArray[i] = "enter";
+            inputTextArray[i] = "enter";
         } else if (inputTextArray[i] === "i") {
-            outputTextArray[i] = "imes";
+            inputTextArray[i] = "imes";
         } else if (inputTextArray[i] === "o") {
-            outputTextArray[i] = "ober";
+            inputTextArray[i] = "ober";
         } else if (inputTextArray[i] === "u") {
-            outputTextArray[i] = "ufat";
+            inputTextArray[i] = "ufat";
         }
     };
 
-    outputText.value = outputTextArray.join("");
+    outputText.value = inputTextArray.join("");
     document.getElementById("output-text").style.backgroundImage = "url()";
     document.getElementById("input-text").value = "";
     document.getElementById("copy-btn").style.visibility = "visible";
 }
 
+// decodifica lo que hay en el textarea de entrada o lo copiado en el textarea de salida
 function decrypt() {
-    const inputText = document.getElementById("input-text").value;
+    let inputText = document.getElementById("input-text").value;
+    
     if (inputText === "") {
         alert("Please enter some text");
         return;
     }
+
+    inputText = inputText.toLowerCase();
     const outputText = document.getElementById("output-text");
     const outputTextArray = [];
+
     for (let i = 0; i < inputText.length; i++) {
         if (inputText[i] === "a" && inputText[i + 1] === "i") {
             outputTextArray.push("a");
@@ -57,12 +65,14 @@ function decrypt() {
             outputTextArray.push(inputText[i]);
         }
     }
+
     outputText.value = outputTextArray.join("");
     document.getElementById("output-text").style.backgroundImage = "url()";
     document.getElementById("input-text").value = "";
     document.getElementById("copy-btn").style.visibility = "visible";
 }
 
+// copia contenido del textarea de salida al textarea de entrada
 function copyText() {
     const outputText = document.getElementById("output-text");
     document.getElementById("input-text").value = outputText.value;
