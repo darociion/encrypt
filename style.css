@@ -69,10 +69,62 @@ a {
 
 /* tablet styles */
 @media screen and (max-width: 768px) {
-    
+
+    #input-text, #output-text {
+        font-size: 1.2rem;
+    }
+
+    #copy-btn {
+        visibility: visible !important;
+    }
+
+    .col-6 {
+        height: 50%;
+        width: 100%;
+    }
+
+    .my-5 {
+        margin-top: 1rem !important;
+        margin-bottom: 0 !important;
+    }
 }
 
 /* cellphone styles */
 @media screen and (max-width: 375px) {
 
+    .btns {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn:not(#github-btn) {
+        width: 100%;
+    }
+
+    #copy-btn {
+        visibility: visible !important;
+    }
+
+    #output-text {
+        background-size: 100%;
+        font-size: 1.2rem;
+    }
+
+    #input-text {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .col-6 {
+        height: 50%;
+        width: 100%;
+    }
+
+    .my-5 {
+        margin-top: 1rem !important;
+        margin-bottom: 0 !important;
+    }
 }
